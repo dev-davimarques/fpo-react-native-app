@@ -6,7 +6,7 @@ export default function Profile() {
   return (
     <View style={styles.container}>
       <Text>Profile Page</Text>
-      <Link href={"/index"}>Ir para a Página Inicial</Link>
+      <Link href={"/"}>Ir para a Página Inicial</Link>
       <StatusBar style="auto" />
     </View>
   );
