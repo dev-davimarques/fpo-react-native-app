@@ -1,9 +1,16 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import { useState } from "react";
+import { Button } from "react-native";
 
 export default function Teste() {
+  const [count, setCount] = useState(0);
+  
+  function handleClick(){
+    setCount(count + 1);
+  }
+
   const [selectedLanguage, setSelectedLanguage] = useState("java"); // Definindo valor padrão
 
   return (
@@ -31,6 +38,10 @@ export default function Teste() {
           Você selecionou: {selectedLanguage.toUpperCase()}
         </Text>
       )}
+
+      <TouchableOpacity onPress={handleClick} style={styles.button}>
+          <Text style={styles.text}>Você me pressionou {count} vezes</Text>
+      </TouchableOpacity>
 
       <StatusBar style="auto" />
     </View>
@@ -70,4 +81,17 @@ const styles = StyleSheet.create({
     color: "#112B11",
     fontWeight: "500",
   },
+  button: {
+    backgroundColor: '#112B11',
+    padding: 15,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  text: {
+    fontSize: 18,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#fff"
+  }
 });
