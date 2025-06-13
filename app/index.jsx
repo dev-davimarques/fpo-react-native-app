@@ -1,12 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Link } from 'expo-router';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import { Link } from "expo-router";
 
 export default function Index() {
   return (
     <View style={styles.container}>
       <Text>Página Inicial</Text>
       <Link href={"/profile"}>Ir para a Tela Profile</Link>
+      <Link href={"/teste"}>Ir para a Tela Teste</Link>
       <StatusBar style="auto" />
     </View>
   );
@@ -15,8 +16,8 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
